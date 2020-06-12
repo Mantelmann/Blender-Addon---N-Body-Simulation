@@ -91,7 +91,10 @@ def prepareWrappers(self, context):
 #Collection Creator
 def get_collection(self, context):
     name = context.scene.n_body_sim.collection_Name
-    print(bpy.data.collections)
+    
+    if name == None:
+        raise Error("Please Name your collection")
+    
     if name in bpy.data.collections:
         print("already exists")
         return name
@@ -175,7 +178,8 @@ class nbProperties(PropertyGroup):
     collection_Name: bpy.props.StringProperty(
         name = "Collection",
         description = "Collection to store N-Body Objects in",
-        #get = get_collection,
+        get = get_collection,
+        default = "N-Bodies"
     )
 
 
