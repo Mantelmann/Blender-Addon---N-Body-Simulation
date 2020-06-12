@@ -1,4 +1,4 @@
-from N_Body_Blender import register
+import N_Body_Blender
 print("Test")
 bl_info = {
     "name": "N-Body Simulation",
@@ -11,4 +11,4 @@ bl_info = {
     "internet": "https://github.com/Mantelmann/Blender-Addon---N-Body-Simulation"
 }
 
-register()
+N_Body_Blender.register()
