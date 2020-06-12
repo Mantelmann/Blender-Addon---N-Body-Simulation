@@ -5,8 +5,8 @@ bl_info = {
     "version": (0, 0, 1),
     "blender": (2, 83, 0),
     "location": "3D View > Create",
-    "warning": "N-Body-Simulation",
-    "category": "Animation"
+    "category": "Animation",
+    "internet": "https://github.com/Mantelmann/Blender-Addon---N-Body-Simulation"
 }
 
 
@@ -379,7 +379,7 @@ def unregister():
     from bpy.utils import unregister_class
     for cls in reversed(classes):
         unregister_class(cls)
-    del bpy.types.Scene.my_tool
+    del bpy.types.Scene.n_body_sim
 
 
 if __name__ == "__main__":
