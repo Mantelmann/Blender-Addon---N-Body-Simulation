@@ -6,7 +6,7 @@ bl_info = {
     "blender": (2, 80, 0),
     "location": "3D View > Create",
     "category": "Animation",
-    "wiki": "https://github.com/Mantelmann/N_Bodies_Blender"
+    "wiki_url": "https://github.com/Mantelmann/N_Bodies_Blender"
 }
 
 
