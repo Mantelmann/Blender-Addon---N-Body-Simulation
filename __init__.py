@@ -6,7 +6,7 @@ bl_info = {
     "blender": (2, 80, 0),
     "location": "3D View > Create",
     "category": "Animation",
-    "internet": "https://github.com/Mantelmann/Blender-Addon---N-Body-Simulation"
+    "wiki": "https://github.com/Mantelmann/N_Bodies_Blender"
 }
 
 
@@ -92,8 +92,8 @@ def prepareWrappers(self, context):
 def get_collection(self, context):
     name = context.scene.n_body_sim.collection_Name
     
-    if name == None:
-        raise Error("Please Name your collection")
+    if name == "":
+        raise Exception("Please Name your collection")
     
     if name in bpy.data.collections:
         print("already exists")
@@ -178,8 +178,8 @@ class nbProperties(PropertyGroup):
     collection_Name: bpy.props.StringProperty(
         name = "Collection",
         description = "Collection to store N-Body Objects in",
-        get = get_collection,
-        default = "N-Bodies"
+        #get = get_collection(),
+        default = "N_Bodies",
     )
 
 
@@ -384,4 +384,7 @@ def unregister():
     for cls in reversed(classes):
         unregister_class(cls)
     del bpy.types.Scene.n_body_sim
+    
 
+if __name__ == "__main__":
+    register()
