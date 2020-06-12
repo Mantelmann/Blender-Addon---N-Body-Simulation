@@ -380,7 +380,3 @@ def unregister():
     for cls in reversed(classes):
         unregister_class(cls)
     del bpy.types.Scene.n_body_sim
-
-
-if __name__ == "__main__":
-    register()
